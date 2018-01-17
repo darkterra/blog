@@ -10,7 +10,7 @@
       "instances"         : 1,
       "exec_mode"         : "cluster",
       "max_memory_restart": "512M",
-      "port"              : 80,
+      "port"              : 3003,
       "watch"             : false,
       "log_date_format"   : "YYYY-MM-DD HH:mm Z",
       "env"               : {
@@ -40,7 +40,7 @@
       "env" : {
         "NODE_ENV"                      : "production",
         "NODE_TLS_REJECT_UNAUTHORIZED"  : "0",
-        "PORT"                          : 80
+        "PORT"                          : 3003
       }
     },
   }
