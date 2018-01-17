@@ -32,7 +32,7 @@
       "host"              : "darkterra.fr",
       "port"              : "22",
       "key"               : "/home/ubuntu/.ssh/id_rsa_nodeuser",
-      "ref"               : "origin/develop",
+      "ref"               : "origin/master",
       "repo"              : "https://github.com/darkterra/blog.git",
       "path"              : "/home/nodeuser/blog/production",
       "pre-deploy"        : "echo 'pre-deploy'",
