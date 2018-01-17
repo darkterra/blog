@@ -36,7 +36,7 @@
       "repo"              : "https://github.com/darkterra/blog.git",
       "path"              : "/home/nodeuser/blog/production",
       "pre-deploy"        : "echo 'pre-deploy'",
-      "post-deploy"       : "echo 'post-deploy'",
+      "post-deploy"       : "pm2 startOrReload ecosystem.json",
       "env" : {
         "NODE_ENV"                      : "production",
         "NODE_TLS_REJECT_UNAUTHORIZED"  : "0",
