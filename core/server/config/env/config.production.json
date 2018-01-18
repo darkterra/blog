@@ -2,7 +2,7 @@
     "url": "https://darkterra.fr",
     "server": {
         "host": "localhost",
-        "port": 80
+        "port": 3003
     },
     "database": {
         "client": "mysql",
