@@ -821,9 +821,9 @@ Usage (In Ghost editor):
     background: transparent;
 }
 
-.post-full-content pre code * {
-    color: inherit;
-}
+/*.post-full-content pre code * {*/
+/*    color: inherit;*/
+/*}*/
 
 .post-full-content .fluid-width-video-wrapper {
     margin: 1.5em 0 3em;
@@ -1028,6 +1028,14 @@ Usage (In Ghost editor):
 .post-full-content table td {
     padding: 6px 12px;
     border: color(var(--whitegrey) l(-1%) s(-5%)) 1px solid;
+}
+
+.post-full-content pre {
+    word-wrap: normal;
+    hyphens: none;
+}
+pre code, pre tt {
+    white-space: pre;
 }
 
 
