@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://darkterra.fr/sitemap.xml
+Sitemap: https://darkterra.fr/sitemap.xml
