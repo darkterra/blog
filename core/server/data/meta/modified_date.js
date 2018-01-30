@@ -14,6 +14,10 @@ function getModifiedDate(data) {
             return new Date(modDate).toISOString();
         }
     }
+    
+    if (context[0] === 'page' && data[context] && data.updated_at ) {
+        return new Date(data.updated_at).toISOString();
+    }
     return null;
 }
 
