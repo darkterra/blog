@@ -782,7 +782,7 @@ Usage (In Ghost editor):
 
 .post-full-content blockquote p {
     margin: 0 0 1em 0;
-    color: inherit;
+    /*color: inherit;*/
     font-size: inherit;
     line-height: inherit;
     font-style: italic;
