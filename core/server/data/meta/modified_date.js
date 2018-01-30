@@ -1,6 +1,8 @@
 var _ = require('lodash');
 
 function getModifiedDate(data) {
+    console.log('getModifiedDate(data): ', data);
+    
     var context = data.context ? data.context : null,
         modDate;
 

@@ -1,4 +1,6 @@
 function getPublishedDate(data) {
+    console.log('getPublishedDate(data): ', data);
+    
     var context = data.context ? data.context[0] : null;
 
     context = context === 'amp' ? 'post' : context;
