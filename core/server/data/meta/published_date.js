@@ -9,8 +9,8 @@ function getPublishedDate(data) {
         return new Date(data[context].published_at).toISOString();
     }
     
-    if (context === 'page' && data[context] && data.published_at ) {
-        return new Date(data.published_at).toISOString();
+    if (context === 'page' && data[context] && data.post && data.post.published_at ) {
+        return new Date(data.post.published_at).toISOString();
     }
     return null;
 }

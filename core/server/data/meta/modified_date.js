@@ -15,8 +15,8 @@ function getModifiedDate(data) {
         }
     }
     
-    if (context[0] === 'page' && data[context] && data.updated_at ) {
-        return new Date(data.updated_at).toISOString();
+    if (context[0] === 'page' && data[context] && data.post && data.post.updated_at) {
+        return new Date(data.post.updated_at).toISOString();
     }
     return null;
 }
