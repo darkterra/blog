@@ -319,6 +319,14 @@ var config = require('./core/server/config'),
                     files: {
                         'core/server/public/ghost.min.css': 'core/server/public/ghost.css'
                     }
+                },
+                darkterra: {
+                    options: {
+                        sourcemap: true
+                    },
+                    files: {
+                        'content/themes/casper/assets/built/screen.min.css': 'content/themes/casper/assets/css/screen.css'
+                    }
                 }
             },
 

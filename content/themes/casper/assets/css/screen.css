@@ -593,6 +593,12 @@ The first (most recent) post in the list is styled to be bigger than the others 
     border-radius: 5px;
 }
 
+.post-full-image-darkterra {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
 @media (max-width: 1170px) {
     .post-full-image {
         margin: 0 -4vw -100px;

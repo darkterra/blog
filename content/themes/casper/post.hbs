@@ -19,9 +19,9 @@ into the {body} of the default.hbs template --}}
 
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
-
+        
         <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
-
+            
             <header class="post-full-header">
                 <section class="post-full-meta">
                     <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
@@ -31,35 +31,39 @@ into the {body} of the default.hbs template --}}
                 </section>
                 <h1 class="post-full-title">{{title}}</h1>
             </header>
-
+            
             {{#if feature_image}}
-            <figure class="post-full-image" style="background-image: url({{feature_image}})">
+            {{!--<figure class="post-full-image" style="background-image: url({{feature_image}})">--}}
+            <figure class="post-full-image">
+                <img src="{{feature_image}}" alt="{{title}}" class="post-full-image-darkterra" />
             </figure>
             {{/if}}
-
+            
             <section class="post-full-content">
                 {{content}}
             </section>
             
-            <div id="disqus_thread"></div>
-            <script>
-                /**
-                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-                
-                var disqus_config = function () {
-                    this.page.url = '{{url absolute="true"}}';  // Replace PAGE_URL with your page's canonical URL variable
-                    this.page.identifier = 'ghost-{{comment_id}}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-                
-                (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document, s = d.createElement('script');
-                s.src = 'https://darkterra-1.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <section class="post-full-comments">
+                <div id="disqus_thread"></div>
+                <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                    
+                    var disqus_config = function () {
+                        this.page.url = '{{url absolute="true"}}';  // Replace PAGE_URL with your page's canonical URL variable
+                        this.page.identifier = 'ghost-{{comment_id}}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://darkterra-1.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </section>
             
             {{!-- Email subscribe form at the bottom of the page --}}
             {{#if @labs.subscribers}}
@@ -69,11 +73,11 @@ into the {body} of the default.hbs template --}}
                 {{subscribe_form placeholder="youremail@example.com"}}
             </section>
             {{/if}}
-
+            
             <footer class="post-full-footer">
                 {{!-- Everything inside the #author tags pulls data from the author --}}
                 {{#author}}
-
+                
                 <section class="author-card">
                     {{#if profile_image}}
                         <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
@@ -90,33 +94,9 @@ into the {body} of the default.hbs template --}}
                 <div class="post-full-footer-right">
                     <a class="author-card-button" href="{{url}}">Read More</a>
                 </div>
-
+                
                 {{/author}}
             </footer>
-
-            {{!--
-
-            If you use Disqus comments, just uncomment this block.
-            The only thing you need to change is "test-apkdzgmqhj" - which
-            should be replaced with your own Disqus site-id.
-
-            <section class="post-full-comments">
-                <div id="disqus_thread"></div>
-                <script>
-                    var disqus_config = function () {
-                        this.page.url = '{{url absolute="true"}}';
-                        this.page.identifier = 'ghost-{{comment_id}}';
-                    };
-                    (function() {
-                        var d = document, s = d.createElement('script');
-                        s.src = 'https://test-apkdzgmqhj.disqus.com/embed.js';
-                        s.setAttribute('data-timestamp', +new Date());
-                        (d.head || d.body).appendChild(s);
-                    })();
-                </script>
-            </section>
-            --}}
-
         </article>
 
     </div>
@@ -158,17 +138,17 @@ into the {body} of the default.hbs template --}}
                 {{/if}}
             {{/get}}
             {{/if}}
-
+            
             {{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
             {{#next_post}}
                 {{> "post-card"}}
             {{/next_post}}
-
+            
             {{!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs --}}
             {{#prev_post}}
                 {{> "post-card"}}
             {{/prev_post}}
-
+            
         </div>
     </div>
 </aside>
@@ -226,17 +206,17 @@ $(document).ready(function () {
         var trigger = title.getBoundingClientRect().top + window.scrollY;
         var triggerOffset = title.offsetHeight + 35;
         var progressMax = lastDocumentHeight - lastWindowHeight;
-
+        
         // show/hide floating header
         if (lastScrollY >= trigger + triggerOffset) {
             header.classList.add('floating-active');
         } else {
             header.classList.remove('floating-active');
         }
-
+        
         progressBar.setAttribute('max', progressMax);
         progressBar.setAttribute('value', lastScrollY);
-
+        
         ticking = false;
     }
 
